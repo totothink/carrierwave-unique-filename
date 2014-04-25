@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Carrierwave::UniqueFilename::VERSION
   spec.authors       = ["aaron\n"]
   spec.email         = ["yalong1976@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{generate unique filename for carrierwave uploader attachment}
+  spec.summary       = %q{generate unique filename for carrierwave uploader attachment}
   spec.homepage      = ""
   spec.license       = "MIT"
 

@@ -3,12 +3,18 @@ module CarrierWave
   module UniqueFilename
     def filename
       if original_filename.present?
-         @name ||= unique_filename
-        "#{@name}.#{file.extension}"
+        @name ||= unique_filename
+        if file.extension
+          "#{@name}.#{file.extension}"
+        else
+          @name
+        end
       end
     end
 
     private
+    # generate unique filename for uploaded file.
+    # uniqueness of filename by cache_id be ensured.
     def unique_filename
       if version_name
         original_name = current_path.gsub("#{version_name}_","")

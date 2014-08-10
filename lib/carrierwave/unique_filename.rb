@@ -4,7 +4,9 @@ module CarrierWave
     def filename
       if original_filename.present?
         @name ||= unique_filename
-        if file.extension
+        if @format
+          "#{@name}.#{@format}"
+        elsif file.respond_to?(:extension)
           "#{@name}.#{file.extension}"
         else
           @name
